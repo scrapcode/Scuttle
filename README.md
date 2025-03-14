@@ -1,6 +1,6 @@
 ﻿# Scuttle
 
-A modern discussion application that takes inspiration from (Reddit)[https://reddit.com]. Built with C# and .NET 9, following Clean Architecture principles and Test-Driven Development.
+A modern discussion application that takes inspiration from [Reddit](https://reddit.com). Built with C# and .NET 9, following Clean Architecture principles and Test-Driven Development.
 
 ![.NET](https://img.shields.io/badge/.NET-9.0-512BD4)
 ![C#](https://img.shields.io/badge/C%23-12.0-239120)
@@ -77,11 +77,17 @@ Scuttle uses the Command Query Responsibility Segregation pattern with MediatR:
 git clone https://github.com/scrapcode/scuttle.git
 cd scuttle
 ```
-2. Restore packages: `dotnet restore`
+2. Restore packages:
+```
+dotnet restore
+```
 3. Update database connection string in `appsettings.json`
 4. Apply migrations:
 ```bash
 cd src/Scuttle.API
 dotnet ef database update
 ```
-5. Run: `dotnet run`
+5. Run:
+```
+dotnet run
+```
