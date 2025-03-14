@@ -3,25 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.API", "Scuttle\Scuttle.API.csproj", "{54CED3ED-DD5D-4D40-9BA6-3A6BEA2F6CA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.API", "src\Scuttle.API\Scuttle.API.csproj", "{54CED3ED-DD5D-4D40-9BA6-3A6BEA2F6CA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Domain", "Scuttle.Domain\Scuttle.Domain.csproj", "{78641A18-9653-45FE-978B-03871978572B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Domain", "src\Scuttle.Domain\Scuttle.Domain.csproj", "{78641A18-9653-45FE-978B-03871978572B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Application", "Scuttle.Application\Scuttle.Application.csproj", "{61345B56-CB7E-446F-9EFF-7330BD975246}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Application", "src\Scuttle.Application\Scuttle.Application.csproj", "{61345B56-CB7E-446F-9EFF-7330BD975246}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Infrastructure", "Scuttle.Infrastructure\Scuttle.Infrastructure.csproj", "{DB1F17F1-F3C7-46BA-8F76-17BA0020E459}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Domain.Tests", "Scuttle.Tests\Scuttle.Domain.Tests.csproj", "{66A43A5C-9382-4B05-B22A-0AA003F20E15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Infrastructure", "src\Scuttle.Infrastructure\Scuttle.Infrastructure.csproj", "{DB1F17F1-F3C7-46BA-8F76-17BA0020E459}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F015583-6EE9-44C4-A118-0E0D3BAD6B2B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DFC4D5F0-CFB4-4CBB-926C-121EE79CC90D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Application.Tests", "Scuttle.Application.Tests\Scuttle.Application.Tests.csproj", "{5520E615-7A43-46D8-953E-B21145D7B7C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Application.Tests", "tests\Scuttle.Application.Tests\Scuttle.Application.Tests.csproj", "{5520E615-7A43-46D8-953E-B21145D7B7C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Infrastructure.Tests", "Scuttle.Infrastructure.Tests\Scuttle.Infrastructure.Tests.csproj", "{EAFA9C3F-4926-4282-9869-39403FB191CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.Infrastructure.Tests", "tests\Scuttle.Infrastructure.Tests\Scuttle.Infrastructure.Tests.csproj", "{EAFA9C3F-4926-4282-9869-39403FB191CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.API.Tests", "Scuttle.API.Tests\Scuttle.API.Tests.csproj", "{26FB6D74-6406-4E14-9338-9C6DE921FD47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuttle.API.Tests", "tests\Scuttle.API.Tests\Scuttle.API.Tests.csproj", "{26FB6D74-6406-4E14-9338-9C6DE921FD47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2655F472-430C-4417-B052-3831403A2560}"
 	ProjectSection(SolutionItems) = preProject
@@ -50,10 +48,6 @@ Global
 		{DB1F17F1-F3C7-46BA-8F76-17BA0020E459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB1F17F1-F3C7-46BA-8F76-17BA0020E459}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB1F17F1-F3C7-46BA-8F76-17BA0020E459}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66A43A5C-9382-4B05-B22A-0AA003F20E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66A43A5C-9382-4B05-B22A-0AA003F20E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66A43A5C-9382-4B05-B22A-0AA003F20E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66A43A5C-9382-4B05-B22A-0AA003F20E15}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5520E615-7A43-46D8-953E-B21145D7B7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5520E615-7A43-46D8-953E-B21145D7B7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5520E615-7A43-46D8-953E-B21145D7B7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,7 +69,6 @@ Global
 		{78641A18-9653-45FE-978B-03871978572B} = {4F015583-6EE9-44C4-A118-0E0D3BAD6B2B}
 		{61345B56-CB7E-446F-9EFF-7330BD975246} = {4F015583-6EE9-44C4-A118-0E0D3BAD6B2B}
 		{DB1F17F1-F3C7-46BA-8F76-17BA0020E459} = {4F015583-6EE9-44C4-A118-0E0D3BAD6B2B}
-		{66A43A5C-9382-4B05-B22A-0AA003F20E15} = {DFC4D5F0-CFB4-4CBB-926C-121EE79CC90D}
 		{5520E615-7A43-46D8-953E-B21145D7B7C5} = {DFC4D5F0-CFB4-4CBB-926C-121EE79CC90D}
 		{EAFA9C3F-4926-4282-9869-39403FB191CA} = {DFC4D5F0-CFB4-4CBB-926C-121EE79CC90D}
 		{26FB6D74-6406-4E14-9338-9C6DE921FD47} = {DFC4D5F0-CFB4-4CBB-926C-121EE79CC90D}
