@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using MediatR;
 using Scuttle.Application.Common.Interfaces;
 using Scuttle.Domain.Entities;
@@ -39,13 +35,13 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResult>
         // Check if user exists
         if (user == null)
         {
-            throw new ApplicationException("Invalid username/email or password");
+            throw new Common.Exceptions.AuthenticationException("Invalid username/email or password");
         }
 
         // Verify password
         if(!_passwordHasher.VerifyPassword(request.Password, user.PasswordHash))
         {
-            throw new ApplicationException("Invalid username/email or password");
+            throw new Common.Exceptions.AuthenticationException("Invalid username/email or password");
         }
 
         // Update last login time

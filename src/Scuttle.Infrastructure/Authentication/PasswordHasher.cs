@@ -1,5 +1,4 @@
-﻿using System;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Scuttle.Application.Common.Interfaces;
 
@@ -35,8 +34,9 @@ public class PasswordHasher : IPasswordHasher
         );
 
         // Format as a base64 with delimitation
+        // {salt}:{key}
         return string.Join(
-            Delimiter,
+            Delimiter.ToString(),
             Convert.ToBase64String(salt),
             Convert.ToBase64String(key)
         );
@@ -48,7 +48,7 @@ public class PasswordHasher : IPasswordHasher
             return false;
 
         // Split the hash into salt and key
-        string[] parts = password.Split(Delimiter);
+        string[] parts = hash.Split(Delimiter);
         if (parts.Length != 2)
             return false;
 

@@ -1,8 +1,6 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
+using Scuttle.Application.Common.Exceptions;
 using Scuttle.Application.Common.Interfaces;
-using Scuttle.Application.Users.Commands;
 using Scuttle.Domain.Entities;
 using Scuttle.Domain.Interfaces;
 
@@ -21,6 +19,10 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, R
 
     public async Task<RegisterUserResult> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
+        // Validate our fields aren't blank.
+        if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
+            throw new ApplicationException("Required input is missing.");
+
         // Validate that the username is unique
         if (await _userRepository.ExistsByUsernameAsync(request.Username))
             throw new ApplicationException($"Username already exists: {request.Username}");

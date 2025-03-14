@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Scuttle\Scuttle.API.csproj" />
+    <ProjectReference Include="..\..\src\Scuttle.API\Scuttle.API.csproj" />
   </ItemGroup>
 
   <ItemGroup>

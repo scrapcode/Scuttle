@@ -92,6 +92,7 @@ if (app.Environment.IsDevelopment())
     }
 }
 
+// Middleware
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
