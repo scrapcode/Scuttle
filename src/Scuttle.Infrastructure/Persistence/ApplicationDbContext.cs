@@ -68,25 +68,23 @@ public class ApplicationDbContext : DbContext
         // Post
         modelBuilder.Entity<Post>(entity =>
         {
-            entity.HasKey(e => e.Id);
+            entity.HasKey(p => p.Id);
 
-            entity.Property(e => e.Title)
+            entity.Property(p => p.Title)
                   .HasMaxLength(300)
                   .IsRequired();
 
-            entity.Property(e => e.Content)
+            entity.Property(p => p.Content)
                   .HasMaxLength(10000)
                   .IsRequired();
 
-            entity.HasOne(e => e.Author)
+            entity.HasOne(p => p.Author)
                 .WithMany()
-                .HasForeignKey(e => e.AuthorId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .HasForeignKey(e => e.AuthorId);
 
             entity.HasOne(e => e.Corner)
-                .WithMany()
-                .HasForeignKey(e => e.CornerId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .WithMany(c => c.Posts)
+                .HasForeignKey(e => e.CornerId);
         });
     }
 }
