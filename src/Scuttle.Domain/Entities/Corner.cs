@@ -49,4 +49,10 @@ public class Corner
         UrlSlug = urlSlug;
         return this;
     }
+
+    public Corner SetDescription(string description)
+    {
+        Description = description;
+        return this;
+    }
 }

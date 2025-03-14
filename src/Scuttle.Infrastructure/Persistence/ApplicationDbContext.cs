@@ -71,11 +71,11 @@ public class ApplicationDbContext : DbContext
             entity.HasKey(e => e.Id);
 
             entity.Property(e => e.Title)
-                  .HasMaxLength(200)
+                  .HasMaxLength(300)
                   .IsRequired();
 
             entity.Property(e => e.Content)
-                  .HasMaxLength(2048)
+                  .HasMaxLength(10000)
                   .IsRequired();
 
             entity.HasOne(e => e.Author)

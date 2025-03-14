@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Scuttle.Application.Common.Exceptions;
 using Scuttle.Application.Common.Interfaces;
 using Scuttle.Domain.Entities;
 using Scuttle.Domain.Interfaces;
