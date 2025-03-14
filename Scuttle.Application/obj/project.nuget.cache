@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZoCQ8JXswZ8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ctcec\\Code\\Scuttle\\Scuttle.Application\\Scuttle.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ctcec\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\ctcec\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\ctcec\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
