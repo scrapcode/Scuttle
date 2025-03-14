@@ -71,6 +71,8 @@ builder.Services.AddMediatR(config =>
 
 var app = builder.Build();
 
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -91,6 +93,7 @@ if (app.Environment.IsDevelopment())
         dbContext.Database.Migrate();
     }
 }
+
 
 // Middleware
 app.UseHttpsRedirection();

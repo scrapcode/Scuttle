@@ -11,6 +11,8 @@ namespace Scuttle.Infrastructure.Persistence;
 public class ApplicationDbContext : DbContext
 {
     public DbSet<User> Users { get; set; }
+    public DbSet<Corner> Corners { get; set; }
+    public DbSet<Post> Posts { get; set; }
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
@@ -18,6 +20,7 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        // User
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id);
@@ -34,6 +37,56 @@ public class ApplicationDbContext : DbContext
                 .IsUnique();
             entity.HasIndex(e => e.Email)
                 .IsUnique();
+        });
+
+        // Corner
+        modelBuilder.Entity<Corner>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+
+            entity.Property(e => e.Name)
+                  .HasMaxLength(100)
+                  .IsRequired();
+
+            entity.Property(e => e.UrlSlug)
+                  .HasMaxLength(100)
+                  .IsRequired();
+
+            entity.Property(e => e.Description)
+                  .HasMaxLength(500);
+
+            entity.HasIndex(e => e.UrlSlug)
+                  .IsUnique();
+
+            // Foreign key relationship with User (Creator)
+            entity.HasOne(e => e.Creator)
+                  .WithMany()
+                  .HasForeignKey(e => e.CreatorId)
+                  .OnDelete(DeleteBehavior.Restrict); // Don't delete corner if user is deleted
+        });
+
+        // Post
+        modelBuilder.Entity<Post>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+
+            entity.Property(e => e.Title)
+                  .HasMaxLength(200)
+                  .IsRequired();
+
+            entity.Property(e => e.Content)
+                  .HasMaxLength(2048)
+                  .IsRequired();
+
+            entity.HasOne(e => e.Author)
+                .WithMany()
+                .HasForeignKey(e => e.AuthorId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            entity.HasOne(e => e.Corner)
+                .WithMany()
+                .HasForeignKey(e => e.CornerId)
+                .OnDelete(DeleteBehavior.Cascade);
         });
     }
 }
