@@ -29,7 +29,16 @@ public class CreateCornerCommandHandler : IRequestHandler<CreateCornerCommand, C
             throw new ApplicationException($"User with the Creator Id of '{request.CreatorId}' does not exist.");
 
         // Generate slug if not provided
-        string urlSlug = request.UrlSlug ?? GenerateUrlSlug(request.Name);
+        string urlSlug;
+
+        if (string.IsNullOrEmpty(request.UrlSlug))
+        {
+            urlSlug = GenerateUrlSlug(request.Name);
+        }
+        else
+        {
+            urlSlug = GenerateUrlSlug(request.UrlSlug);
+        }
 
         // Check if name already exists
         if (await _cornerRepository.ExistsByNameAsync(request.Name))

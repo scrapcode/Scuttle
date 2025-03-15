@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Scuttle.Domain\Scuttle.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Corners\Queries\" />
-  </ItemGroup>
-
 </Project>
